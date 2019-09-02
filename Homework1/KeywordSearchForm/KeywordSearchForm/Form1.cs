@@ -21,5 +21,20 @@ namespace KeywordSearchForm
         {
 
         }
+
+        private void GenerateContents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PathBox_TextChanged(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void PathBox_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
     }
 }

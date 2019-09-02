@@ -34,6 +34,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.generateContents = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // pathBox
@@ -42,12 +43,15 @@
             this.pathBox.Name = "pathBox";
             this.pathBox.Size = new System.Drawing.Size(269, 20);
             this.pathBox.TabIndex = 0;
+            this.pathBox.Text = "Select Text File";
+            this.pathBox.Click += new System.EventHandler(this.PathBox_Click);
             // 
             // fileContents
             // 
             this.fileContents.Location = new System.Drawing.Point(284, 12);
             this.fileContents.Multiline = true;
             this.fileContents.Name = "fileContents";
+            this.fileContents.ReadOnly = true;
             this.fileContents.Size = new System.Drawing.Size(504, 426);
             this.fileContents.TabIndex = 1;
             // 
@@ -77,6 +81,7 @@
             this.generateContents.TabIndex = 4;
             this.generateContents.Text = "Generate";
             this.generateContents.UseVisualStyleBackColor = true;
+            this.generateContents.Click += new System.EventHandler(this.GenerateContents_Click);
             // 
             // search
             // 
@@ -86,6 +91,10 @@
             this.search.TabIndex = 5;
             this.search.Text = "Search";
             this.search.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // KeywordSearch
             // 
@@ -113,6 +122,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button generateContents;
         private System.Windows.Forms.Button search;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
