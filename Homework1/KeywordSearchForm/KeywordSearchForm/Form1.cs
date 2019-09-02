@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KeywordSearchForm
 {
-    public partial class Form1 : Form
+    public partial class KeywordSearch : Form
     {
-        public Form1()
+        public KeywordSearch()
         {
             InitializeComponent();
+        }
+
+        private void KeywordBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
