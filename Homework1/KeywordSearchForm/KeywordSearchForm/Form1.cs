@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,17 +25,23 @@ namespace KeywordSearchForm
 
         private void GenerateContents_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void PathBox_TextChanged(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
+            fileContents.Text = System.IO.File.ReadAllText(pathBox.Text);
         }
 
         private void PathBox_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
+            pathBox.Text = openFileDialog1.FileName;
+        }
+
+        private void FileContents_TextChanged(object sender, EventArgs e)
+        {
+            keywordBox.Text = "Enter a search term";
+        }
+
+        private void KeywordBox_Click_1(object sender, EventArgs e)
+        {
+            keywordBox.Text = "";
         }
     }
 }

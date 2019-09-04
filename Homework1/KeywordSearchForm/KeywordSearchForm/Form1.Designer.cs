@@ -54,6 +54,7 @@
             this.fileContents.ReadOnly = true;
             this.fileContents.Size = new System.Drawing.Size(504, 426);
             this.fileContents.TabIndex = 1;
+            this.fileContents.TextChanged += new System.EventHandler(this.FileContents_TextChanged);
             // 
             // keywordBox
             // 
@@ -61,6 +62,7 @@
             this.keywordBox.Name = "keywordBox";
             this.keywordBox.Size = new System.Drawing.Size(180, 20);
             this.keywordBox.TabIndex = 2;
+            this.keywordBox.Click += new System.EventHandler(this.KeywordBox_Click_1);
             this.keywordBox.TextChanged += new System.EventHandler(this.KeywordBox_TextChanged);
             // 
             // checkBox1
@@ -95,6 +97,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "\"txt files (*.txt)|*.txt|All files (*.*)|*.*\"";
             // 
             // KeywordSearch
             // 
