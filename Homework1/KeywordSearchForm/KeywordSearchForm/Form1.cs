@@ -68,7 +68,22 @@ namespace KeywordSearchForm
                 {
                     count++;
                     fileContents.Select((doc.IndexOf(word)+(fileContents.Text.Length-doc.Length)),word.Length); //Selects region in rich textbox at correct index
-                    fileContents.SelectionColor = Color.Red;
+                    if (colorChoiceRed.Checked) //Check radio buttons for highlight color choice
+                    {
+                        fileContents.SelectionColor = Color.Red;
+                    }
+                    else if (colorChoiceBlue.Checked)
+                    {
+                        fileContents.SelectionColor = Color.Blue;
+                    }
+                    else if (colorChoiceGreen.Checked)
+                    {
+                        fileContents.SelectionColor = Color.Green;
+                    }
+                    else
+                    {
+                        fileContents.SelectionColor = Color.Purple;
+                    }
                     doc = doc.Remove(0, (doc.IndexOf(word) + word.Length));
                 }
                 else
@@ -76,7 +91,11 @@ namespace KeywordSearchForm
                     running = false;
                 }
             }
-            keywordBox.Text = string.Concat("Number of Matches: ", count.ToString()); //Displays number of matches in keyword box
+            float selectionLength = count * word.Length;
+            float selectionFloat = selectionLength / (float)fileContents.Text.Length;
+            string selectionPercentage = selectionFloat.ToString("0.00");
+            string dataDisplay = "Number of Matches: " + count.ToString() + " (" + selectionPercentage + "%)";
+            keywordBox.Text = dataDisplay; //Displays number of matches in keyword box
         }
 
         private void FileContents_TextChanged_1(object sender, EventArgs e)
