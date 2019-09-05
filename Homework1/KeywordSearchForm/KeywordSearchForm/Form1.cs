@@ -56,6 +56,10 @@ namespace KeywordSearchForm
             bool running = true;
             string doc = fileContents.Text;
             string word = keywordBox.Text;
+            if (word.Length < 1) //Returns if nothing entered
+            {
+                return;
+            }
             if (!checkBox1.Checked)
             {
                 doc = doc.ToUpper();
