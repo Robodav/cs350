@@ -76,7 +76,7 @@ namespace KeywordSearchForm
                     running = false;
                 }
             }
-            keywordBox.Text = string.Concat("Number of Matches: ", count.ToString());
+            keywordBox.Text = string.Concat("Number of Matches: ", count.ToString()); //Displays number of matches in keyword box
         }
 
         private void FileContents_TextChanged_1(object sender, EventArgs e)
