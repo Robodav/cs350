@@ -43,5 +43,33 @@ namespace KeywordSearchForm
         {
             keywordBox.Text = "";
         }
+
+        private void PathBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            bool running = true;
+            string doc = fileContents.Text;
+            string word = keywordBox.Text;
+            while (running)
+            {
+                bool found = doc.Contains(word);
+                if (found)
+                {
+                    count++;
+                    doc = doc.Remove(0, (doc.IndexOf(word) + word.Length));
+                    fileContents.Text = doc;
+                }
+                else
+                {
+                    running = false;
+                }
+            }
+            keywordBox.Text = count.ToString();
+        }
     }
 }

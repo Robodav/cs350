@@ -45,6 +45,7 @@
             this.pathBox.TabIndex = 0;
             this.pathBox.Text = "Select Text File";
             this.pathBox.Click += new System.EventHandler(this.PathBox_Click);
+            this.pathBox.TextChanged += new System.EventHandler(this.PathBox_TextChanged);
             // 
             // fileContents
             // 
@@ -93,6 +94,7 @@
             this.search.TabIndex = 5;
             this.search.Text = "Search";
             this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.Search_Click);
             // 
             // openFileDialog1
             // 
