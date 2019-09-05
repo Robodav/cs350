@@ -61,15 +61,21 @@ namespace KeywordSearchForm
                 if (found)
                 {
                     count++;
+                    fileContents.Select((doc.IndexOf(word)+(fileContents.Text.Length-doc.Length)),word.Length);
+                    fileContents.SelectionColor = Color.Red;
                     doc = doc.Remove(0, (doc.IndexOf(word) + word.Length));
-                    fileContents.Text = doc;
                 }
                 else
                 {
                     running = false;
                 }
             }
-            keywordBox.Text = count.ToString();
+            keywordBox.Text = string.Concat("Number of Instances: ", count.ToString());
+        }
+
+        private void FileContents_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pathBox = new System.Windows.Forms.TextBox();
-            this.fileContents = new System.Windows.Forms.TextBox();
             this.keywordBox = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.generateContents = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fileContents = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // pathBox
@@ -46,16 +46,6 @@
             this.pathBox.Text = "Select Text File";
             this.pathBox.Click += new System.EventHandler(this.PathBox_Click);
             this.pathBox.TextChanged += new System.EventHandler(this.PathBox_TextChanged);
-            // 
-            // fileContents
-            // 
-            this.fileContents.Location = new System.Drawing.Point(284, 12);
-            this.fileContents.Multiline = true;
-            this.fileContents.Name = "fileContents";
-            this.fileContents.ReadOnly = true;
-            this.fileContents.Size = new System.Drawing.Size(504, 426);
-            this.fileContents.TabIndex = 1;
-            this.fileContents.TextChanged += new System.EventHandler(this.FileContents_TextChanged);
             // 
             // keywordBox
             // 
@@ -101,16 +91,25 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "\"txt files (*.txt)|*.txt|All files (*.*)|*.*\"";
             // 
+            // fileContents
+            // 
+            this.fileContents.Location = new System.Drawing.Point(290, 12);
+            this.fileContents.Name = "fileContents";
+            this.fileContents.Size = new System.Drawing.Size(498, 426);
+            this.fileContents.TabIndex = 6;
+            this.fileContents.Text = "";
+            this.fileContents.TextChanged += new System.EventHandler(this.FileContents_TextChanged_1);
+            // 
             // KeywordSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fileContents);
             this.Controls.Add(this.search);
             this.Controls.Add(this.generateContents);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.keywordBox);
-            this.Controls.Add(this.fileContents);
             this.Controls.Add(this.pathBox);
             this.Name = "KeywordSearch";
             this.Text = "Keyword Search";
@@ -122,12 +121,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox pathBox;
-        private System.Windows.Forms.TextBox fileContents;
         private System.Windows.Forms.TextBox keywordBox;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button generateContents;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RichTextBox fileContents;
     }
 }
 
