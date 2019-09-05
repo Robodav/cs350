@@ -42,6 +42,7 @@ namespace KeywordSearchForm
         private void KeywordBox_Click_1(object sender, EventArgs e)
         {
             keywordBox.Text = "";
+            fileContents.Text = System.IO.File.ReadAllText(pathBox.Text);
         }
 
         private void PathBox_TextChanged(object sender, EventArgs e)
@@ -55,13 +56,18 @@ namespace KeywordSearchForm
             bool running = true;
             string doc = fileContents.Text;
             string word = keywordBox.Text;
+            if (!checkBox1.Checked)
+            {
+                doc = doc.ToUpper();
+                word = word.ToUpper();
+            }
             while (running)
             {
                 bool found = doc.Contains(word);
                 if (found)
                 {
                     count++;
-                    fileContents.Select((doc.IndexOf(word)+(fileContents.Text.Length-doc.Length)),word.Length);
+                    fileContents.Select((doc.IndexOf(word)+(fileContents.Text.Length-doc.Length)),word.Length); //Selects region in rich textbox at correct index
                     fileContents.SelectionColor = Color.Red;
                     doc = doc.Remove(0, (doc.IndexOf(word) + word.Length));
                 }
@@ -70,10 +76,15 @@ namespace KeywordSearchForm
                     running = false;
                 }
             }
-            keywordBox.Text = string.Concat("Number of Instances: ", count.ToString());
+            keywordBox.Text = string.Concat("Number of Matches: ", count.ToString());
         }
 
         private void FileContents_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

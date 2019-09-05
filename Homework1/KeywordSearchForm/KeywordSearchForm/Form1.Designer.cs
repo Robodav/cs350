@@ -65,6 +65,7 @@
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Match Case";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // generateContents
             // 
